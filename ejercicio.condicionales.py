@@ -1,14 +1,11 @@
-print("Ingrese la fecha actual en formato (dia,DD/MM)")
 
-fecha=input("dia: ") + ", " + input("fecha DD/MM: ")+ "/" + input("") 
-print(fecha)
-
-dia_sem=fecha[0:fecha.find(",")]
-dia=int(fecha[fecha.find(" ")+1:
-                fecha.find("/")])
-mes=int(fecha[fecha.find("/")+1:])
-
-dia_sem=dia_sem.lower()
+lista=input("Ingrese la fecha actual en formato (dia,DD/MM): ")
+lista=lista.split(",")
+dia_sem=lista[0].lower()
+lista2=lista[1]
+lista2=lista2.split("/")
+dia=int(lista2[0])
+mes=int(lista2[1])
 
 if (dia_sem !="lunes" and dia_sem !="martes" and dia_sem !="miercoles" and dia_sem !="jueves" and dia_sem !="viernes"):
     print("ERROR")
