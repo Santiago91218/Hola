@@ -83,17 +83,17 @@ else:
     print("El año no es biciesto")'''
     
 #EJERCICIO 7
-'''7.Escribí un programa para solicitar al usuario tres números y mostrar en pantalla al menor de los tres.
+"""7.Escribí un programa para solicitar al usuario tres números y mostrar en pantalla al menor de los tres.
 num1 = int(input("Ingresa el primer número entero: "))
 num2 = int(input("Ingresa el segundo número entero: "))
-num3 = int(input("Ingresa el tercero número entero: "))
+num3 = int(input("Ingresa el tercer número entero: "))
 
-if num1 > num2 and num1>num3:
-    print(f"El número mas grande es el: {num1}")
-elif num2>num3 and num2>num1:
-    print(f"El número mas grande es el: {num2}")
-elif num3>num2 and num3>num1:
-    print(f"El número mas grande es el: {num3}")'''
+if num1 < num2 and num1<num3:
+    print(f"El número mas chico es el: {num1}")
+elif num2<num3 and num2<num1:
+    print(f"El número mas chico es el: {num2}")
+elif num3<num2 and num3<num1:
+    print(f"El número mas chico es el: {num3}")"""
 
 #8 EJERCICIO 8 
 '''8.Escribí un programa que solicite ingresar un nombre de usuario y una contraseña. 
@@ -216,15 +216,18 @@ else:
     print("El numero mayor no es multiplo del menor")'''
 
 #EJERCICIO 14
-'''Escriba un programa que pida los coeficientes de una ecuación de primer grado (a x + b = 0) y escriba la solución.
+"""Escriba un programa que pida los coeficientes de una ecuación de primer grado (a x + b = 0) y escriba la solución.
 Se recuerda que una ecuación de primer grado puede no tener solución, tener una solución única, o que todos los 
 números sean solución. Se recuerda que la fórmula de las soluciones es: x = -b / a
 
 print("Coeficientes de primer grado, formula: a x + b = 0")
-a = int(input("Ingrese el valor de a: "))
-b = int(input("Ingrese el valor de b: "))
-x = (-b / a)
-print(f"El valor de es: {x}")'''
+num_1 = int(input("Ingrese el valor de a: "))
+num_2 = int(input("Ingrese el valor de b: "))
+if num_1==0:
+    print ("no se puede dividir por 0")
+else:
+    resultado= (-num_2 / num_1)
+    print(f"El valor de es: {resultado}")"""
 
 #EJERCICIO 15
 '''15.Escriba un programa que pregunte primero si se quiere calcular el área de un triángulo o 
@@ -248,44 +251,47 @@ else:
     print("Ingrese valores validos")'''
 
 #EJERCICIO 16
-'''16.Haz una calculadora básica pida al usuario dos valores, a y b.
+"""16.Haz una calculadora básica pida al usuario dos valores, a y b.
 Según la opción que desean, realizar la operación:
 •	Si operación es 1 entonces debemos ver el resultado de a + b
 •	Si operación es 2 entonces debemos ver el resultado de a * b
 •	Si operación es 3 entonces debemos ver el resultado de a - b
 •	Si operación es 4 entonces debemos ver el resultado de a / b
 
-a = int(input("Ingrese el primer valor: "))
-b = int(input("Ingrese el segundo valor: "))
+num1 = int(input("Ingrese el primer valor: "))
+num2 = int(input("Ingrese el segundo valor: "))
 operacion = int(input("Ingrese la operacion que desea realizar: "))
 if operacion == 1:
-    operacion = a + b
+    operacion = num1 + num2
     print(f"El resultado de su operacion es: {operacion}")
 elif operacion == 2:
-    operacion = a * b
+    operacion = num1 * num2
     print(f"El resultado de su operacion es: {operacion}")
 elif operacion == 3:
-    operacion = a - b
+    operacion = num1 - num2
     print(f"El resultado de su operacion es: {operacion}")
 elif operacion == 4:
-    operacion = a / b
-    print(f"El resultado de su operacion es: {operacion}")
+    if num2==0:
+        print("No se puede dividir por 0")
+    else:
+        operacion = num1 / num2
+        print(f"El resultado de su operacion es: {operacion}")
 else :
-    print("Ingrese un valor correcto")'''
+    print("Ingrese un valor correcto")"""
 
 #EJERCICIO 17
 '''17.Requerir al usuario que ingrese un día de la semana e imprimir un mensaje si es lunes, 
 otro mensaje diferente si es viernes, otro mensaje diferente si es sábado
 o domingo. Si el día ingresado no es ninguno de esos, imprimir otro mensaje.
 
-diaSemana = input("Ingresar un dia de la semana: ")
-diaSemana=diaSemana.lower()
+dia_semana = input("Ingresar un dia de la semana: ")
+dia_semana=dia_semana.lower()
 
-if(diaSemana == "lunes"):
+if(dia_semana == "lunes"):
     print("El dia ingresado es lunes. ")
-elif(diaSemana == "viernes"): 
+elif(dia_semana == "viernes"): 
     print("El dia ingresado es viernes. ")
-elif(diaSemana == "sabado" or diaSemana == "domingo"): 
+elif(dia_semana == "sabado" or dia_semana == "domingo"): 
     print("El dia ingresado es sabado o domingo. ")
 else: 
     print("Usted no ha ingresado ni Lunes, ni viernes, ni sabadado ni domingo. ")'''
@@ -297,45 +303,45 @@ Calcular, dadas las horas trabajadas, si trabajó horas extras y mostrar esta ca
 Mostrar su salario total, tomando en cuenta que las horas extras serán pagadas un 10% más
  que las horas laborales comunes.
 
-horasTrabajadas = float(input("Ingresar la cantidad de horas trabajadas en el mes: "))
-salarioHoras = float(input("Ingresar cuanto es el salario x horas: "))
+horasT_trabajadas = float(input("Ingresar la cantidad de horas trabajadas en el mes: "))
+salario_horas = float(input("Ingresar cuanto es el salario x horas: "))
 
-if(horasTrabajadas > 48 ):
-    horasExtras = (horasTrabajadas-48)
-    print(f"Usted realizo {horasExtras} horas extras. ")
-    salarioExtra = (horasTrabajadas*salarioHoras)*10/100
-    salarioTotal = (horasTrabajadas*salarioHoras) + salarioExtra
-    print("Su salario total es de: $",salarioTotal)
+if(horas_trabajadas > 48 ):
+    horas_extras = (horasTrabajadas-48)
+    print(f"Usted realizo {horas_extras} horas extras. ")
+    salario_extra = (horas_trabajadas*salario_horas)*10/100
+    salario_total = (horas_trabajadas*salario_horas) + salarioExtra
+    print("Su salario total es de: $",salario_total)
 else: 
-    salarioTotal = horasTrabajadas*salarioHoras
-    print(f"Usted ha realizado {horasTrabajadas}hs. Y su salario total es de: ${salarioTotal}")'''
+    salario_total = horas_trabajadas*salario_horas
+    print(f"Usted ha realizado {horas_trabajadas}hs. Y su salario total es de: ${salario_total}")'''
 
 #EJERCICIO 19
 '''19.Determinar cuánto se debe pagar por una cantidad de lápices considerando que si son 1000 o más, existe un
 descuento de 7% y teniendo en cuenta que el costo por lápiz es de $60; de lo contrario no hay descuento.
 
-precioLapiz = 60
+precio_lapiz = 60
 lapices = int(input("Ingresar la cantidad de lapices: "))
 
 if(lapices >= 1000):
         print(f"Por la cantidad que lleva tine un 7% de descuento")
         descuento = (lapices*60)*7/100
-        precioFinal = (lapices*60)-descuento
-        print("Lo cual su total es de: $",precioFinal)
+        precio_final = (lapices*60)-descuento
+        print("Lo cual su total es de: $",precio_final)
 else:
-        precioFinal = (lapices*60)
-        print("El precio total es de: ",precioFinal)'''
+        precio_final = (lapices*60)
+        print("El precio total es de: ",precio_final)'''
 
 #EJERCICIO 20        
 '''20.Determinar si un alumno aprueba o reprueba un curso, sabiendo que aprobara 
 si su promedio de cuatro (4) notas, es mayor o igual a 6; caso contrario saldrá desaprobado.
 
-notaUno = float(input("Ingrese su primera nota: "))
-notaDos = float(input("Ingrese su segunda nota: "))
-notaTres = float(input("Ingrese su tercera nota: "))
-notaCuatro = float(input("Ingrese su cuarta nota: "))
+nota_uno = float(input("Ingrese su primera nota: "))
+nota_dos = float(input("Ingrese su segunda nota: "))
+nota_tres = float(input("Ingrese su tercera nota: "))
+nota_cuatro = float(input("Ingrese su cuarta nota: "))
 
-promedio = (notaUno + notaDos + notaTres + notaCuatro)/4
+promedio = (nota_uno + nota_dos + nota_tres + nota_cuatro)/4
 
 print("Su promedio es de: ",promedio)
 if(promedio >= 6):

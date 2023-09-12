@@ -18,7 +18,7 @@ for i in range(5):
 """#2
 total_impares=total_pares=0
 while True:
-    num=int(input("Ingrese un numero: "))
+    num=int(input("Ingrese un numero(ingrese 0 para finalizar): "))
     if num==0:
         break
     pares=impares=0
