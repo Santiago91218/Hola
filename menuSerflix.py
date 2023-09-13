@@ -25,18 +25,22 @@ while(numMenu != 6):
         continue
 
     elif(numMenu == 2):
-        prompt = int(input("Ingrese la opción de la pelicula que desea eliminar: "))
+        prompt = input("Ingrese la opción de la pelicula que desea eliminar: ") . title()
         print("----------------")
-        if(prompt < 1 or prompt > len(movie_array)):
-            print("El indice ingresado es invalido")
-            print("----------------")
-
-        else:
-            delete = movie_array[prompt-1]
-            del movie_array[prompt-1]
-            print(f"Se elimino la pelicula {delete}")
-            print("----------------")
-        continue
+        ex = 0
+        not_found=0
+        for peli in movie_array:
+            if prompt == peli:
+                delete = movie_array[ex]
+                del movie_array[ex]
+                print(f"Se elimino la pelicula {delete}")
+                print("----------------")
+                continue
+            else: 
+                not_found+=1
+            ex+=1
+            if not_found == len(movie_array):
+                print("Película no encontrada")
 
     elif(numMenu == 3):
         search_movie = (input("Ingrese el nombre de la pelicula a buscar: ").title()).strip()
